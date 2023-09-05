@@ -7,8 +7,6 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 ---
 
-![bg left:40% 80%](../../Customization/iths-logo.png)
-
 # Next.js
 
 Jens Palmqvist
@@ -25,7 +23,7 @@ Jens Palmqvist
 
 # Komma igång
 
-- För att skapa ett nytt projekt (med namnet *my-app*):
+- För att skapa ett nytt projekt (med namnet _my-app_):
 
 ```sh
 npx create-next-app my-app
@@ -42,6 +40,7 @@ cd my-app
 ```sh
 npm run dev
 ```
+
 ---
 
 # Kommandon
@@ -78,26 +77,26 @@ npm run test # Kör eventuella tester
 
 - Next har inbyggd routing
 - Varje fil i pages-mappen blir en sida
-- Om vi skapar en fil som heter *about.js* i pages-mappen kommer den att vara tillgänglig på adressen */about*
-- Om vi skapar en fil som heter *about/index.js* i pages-mappen kommer den att vara tillgänglig på adressen */about*
+- Om vi skapar en fil som heter _about.js_ i pages-mappen kommer den att vara tillgänglig på adressen _/about_
+- Om vi skapar en fil som heter _about/index.js_ i pages-mappen kommer den att vara tillgänglig på adressen _/about_
 
 ---
 
 # Dynamisk routing
 
-- Om vi vill skapa en dynamisk sida kan vi skapa en fil som heter *\[id\].js* i pages-mappen
+- Om vi vill skapa en dynamisk sida kan vi skapa en fil som heter _\[id\].js_ i pages-mappen
 - För att hämta id:t i komponenten använder vi **useRouter**
 
 ```js
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 const Post = () => {
-  const router = useRouter()
-  const { id } = router.query
+  const router = useRouter();
+  const { id } = router.query;
 
-  return <p>Post: {id}</p>
-}
+  return <p>Post: {id}</p>;
+};
 
-export default Post
+export default Post;
 ```
 
 ---
@@ -105,14 +104,13 @@ export default Post
 # Övning - kom igång med Next.js
 
 - Skapa ett nytt Next.js-projekt
-- Skapa en sida som heter *about*
+- Skapa en sida som heter _about_
 - Starta appen och navigera till sidan i webbläsaren
-
 
 ---
 
 # Övning, dynamisk id
 
 - Denna övning är lite svårare
-- Skapa en dynamisk sida som heter *posts* och som tar emot ett id som parameter -> visa upp id:t på sidan
+- Skapa en dynamisk sida som heter _posts_ och som tar emot ett id som parameter -> visa upp id:t på sidan
 - Du ska nu kunna navigera till http://localhost:3000/posts/1 och http://localhost:3000/posts/2 och se olika id:n på sidorna

@@ -7,8 +7,6 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 ---
 
-![bg left:40% 80%](../../Customization/iths-logo.png)
-
 # Create React App
 
 Jens Palmqvist
@@ -17,7 +15,7 @@ Jens Palmqvist
 
 # Vad är Create React App?
 
-- För att starta ett nytt Reactprojekt använder vi *Create React App*
+- För att starta ett nytt Reactprojekt använder vi _Create React App_
 - Innehåller en massa trevliga saker vi vill ha:
   - Babel för transpilering
   - Utvecklingsmiljö med Hot reload
@@ -27,7 +25,7 @@ Jens Palmqvist
 
 # Komma igång
 
-- För att skapa ett nytt projekt (med namnet *my-app*):
+- För att skapa ett nytt projekt (med namnet _my-app_):
 
 ```sh
 npx create-react-app my-app
@@ -38,6 +36,7 @@ npx create-react-app my-app
 ```sh
 cd my-app
 ```
+
 ---
 
 # Kommandon
@@ -78,7 +77,7 @@ npm run eject # Skapar en lokal kopia av alla byggscript - rekommenderas ej!
 
 - Skapa din egen React-app med CRA
 - Skapa en katalog som heter src/components
-- Skapa en fil för komponenterna *OrderConfirmation*, *OrderConfirmationText* och *Title* som du skapade tidigare i en html-fil
+- Skapa en fil för komponenterna _OrderConfirmation_, _OrderConfirmationText_ och _Title_ som du skapade tidigare i en html-fil
 - Kopiera in komponentkoden och exportera som default
 
 ---
@@ -87,7 +86,7 @@ npm run eject # Skapar en lokal kopia av alla byggscript - rekommenderas ej!
 
 - Skriv om komponenten i App.jsx till en arrow-funktion som returnerar en React Fragment <></>
 - Lägg in ett h1-element där det står Mina komponenter i
-- Under H1:an länka in dina komponenter från *components*-mappen med dess taggar (glöm inte att importera från deras respektive filer)
+- Under H1:an länka in dina komponenter från _components_-mappen med dess taggar (glöm inte att importera från deras respektive filer)
 - Här kan du sedan länka in komponenter som du bygger i senare övningar
 - Kör **npm start** för att testa
 

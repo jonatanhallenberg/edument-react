@@ -7,8 +7,6 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 ---
 
-![bg left:40% 80%](../../Customization/iths-logo.png)
-
 # CSS i React
 
 Jens Palmqvist
@@ -32,7 +30,7 @@ Jens Palmqvist
 - En CSS-class som finns här kan användas var som helst på sidan
 
 ```tsx
-import './App.css';
+import "./App.css";
 ```
 
 ---
@@ -57,17 +55,18 @@ import './App.css';
 # Inline styling - exempel
 
 ```tsx
-    const ButtonStyle = {
-        backgroundColor: "#333333",
-        borderRadius: "3px",
-        padding: "5px 10px",
-        color: "white"
-    };
+const ButtonStyle = {
+  backgroundColor: "#333333",
+  borderRadius: "3px",
+  padding: "5px 10px",
+  color: "white",
+};
 ```
 
 ```html
-<button style={ButtonStyle}>En stylad knapp!</button>
+<button style="{ButtonStyle}">En stylad knapp!</button>
 ```
+
 ---
 
 # Övning - Inline Styling
@@ -76,10 +75,10 @@ import './App.css';
 
 ```css
 input {
-    font-size: 18px;
-    line-height: 20px;
-    border: 1px solid gray;
-    border-radius: 3px;
+  font-size: 18px;
+  line-height: 20px;
+  border: 1px solid gray;
+  border-radius: 3px;
 }
 ```
 
@@ -87,8 +86,8 @@ input {
 
 # CSS Modules
 
-- CSS Modules är ett annat sätt att ha *scoped styling*
-- En fil för CSS-moduler har filändelsen *.module.css*
+- CSS Modules är ett annat sätt att ha _scoped styling_
+- En fil för CSS-moduler har filändelsen _.module.css_
 - I den filen skriver man helt vanliga CSS-klasser
 - Genom att importera filen i komponenten får man tillgång till CSS-klasserna och kan applicera på olika element via className
 
@@ -99,20 +98,23 @@ input {
 ```css
 /*button.module.css*/
 .button {
-    background-color: #333333;
-    border-radius: 3px;
-    padding: 5px 10px;
-    color: white;
-};
+  background-color: #333333;
+  border-radius: 3px;
+  padding: 5px 10px;
+  color: white;
+}
 ```
 
 ```tsx
-import styles from './button.module.css';
+import styles from "./button.module.css";
 const ButtonCSSModule = () => (
-    <button className={styles.button} type="button">Klicka här</button>
+  <button className={styles.button} type="button">
+    Klicka här
+  </button>
 );
 export default ButtonCSSModule;
 ```
+
 ---
 
 # Övning - CSS Modules
@@ -121,14 +123,14 @@ export default ButtonCSSModule;
 
 ```css
 input {
-    font-size: 18px;
-    line-height: 20px;
-    border: 1px solid gray;
-    border-radius: 3px;
+  font-size: 18px;
+  line-height: 20px;
+  border: 1px solid gray;
+  border-radius: 3px;
 }
 ```
 
-----
+---
 
 # Styled components
 
@@ -147,7 +149,8 @@ https://en.wikipedia.org/wiki/CSS-in-JS
 - För att skapa en styled components kombinerar man ihop ett html-element och en sträng med CSS
 - Strängen är en template string vilket innebär att man kan lägga in JS-kod i strängen
 
-*En röd knapp:*
+_En röd knapp:_
+
 ```tsx
 const MyStyledButton = button.styled`
     background-color: red;
@@ -168,35 +171,37 @@ npm install --save-dev @types/styled-components
 - Och importera i komponenten:
 
 ```ts
-import styled from 'styled-components';
+import styled from "styled-components";
 ```
 
 ---
 
 # VSCode syntax highlightning
 
-- Plugin som heter *vscode-styled-components*
+- Plugin som heter _vscode-styled-components_
 - Highlightar CSS-koden i strängen
 
 ---
+
 # Styled components - exempel
 
 ```tsx
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StyledButton = styled.button`
-    background-color: #333333;
-    border-radius: 3px;
-    padding: 5px 10px;
-    color: white;
+  background-color: #333333;
+  border-radius: 3px;
+  padding: 5px 10px;
+  color: white;
 `;
 
 const ButtonStyledComponents = () => (
-    <StyledButton type="button">Klicka här</StyledButton>
+  <StyledButton type="button">Klicka här</StyledButton>
 );
 
 export default ButtonStyledComponents;
 ```
+
 ---
 
 # Övning - Styled components
@@ -205,10 +210,10 @@ export default ButtonStyledComponents;
 
 ```css
 input {
-    font-size: 18px;
-    line-height: 20px;
-    border: 1px solid gray;
-    border-radius: 3px;
+  font-size: 18px;
+  line-height: 20px;
+  border: 1px solid gray;
+  border-radius: 3px;
 }
 ```
 
@@ -220,15 +225,17 @@ input {
 
 ```tsx
 const StyledButton = styled.button`
-    background-color: ${props => props.color};
-    border-radius: 3px;
-    padding: 5px 10px;
-    color: white;
+  background-color: ${(props) => props.color};
+  border-radius: 3px;
+  padding: 5px 10px;
+  color: white;
 `;
 ```
 
 ```tsx
-<StyledButton type="button" color="red">Klicka här!</StyledButton>
+<StyledButton type="button" color="red">
+  Klicka här!
+</StyledButton>
 ```
 
 ---
@@ -253,11 +260,12 @@ const StyledButton = styled.button`
 ```tsx
 // Alla ul som ligger i listan MyStyledList får röd textfärg
 const MyStyledList = styled.ul`
-    & > li {
-        color: red;
-    }
-`
+  & > li {
+    color: red;
+  }
+`;
 ```
+
 ---
 
 # Styled components - Pseudoklasser
@@ -266,8 +274,8 @@ const MyStyledList = styled.ul`
 
 ```tsx
 const MyStyledButton = styled.button`
-    &:hover {
-        background-color: red;
-    }
-`
+  &:hover {
+    background-color: red;
+  }
+`;
 ```

@@ -7,8 +7,6 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 ---
 
-![bg left:40% 80%](../../Customization/iths-logo.png)
-
 # Enhetstesta komponenter
 
 Jens Palmqvist
@@ -19,7 +17,7 @@ Jens Palmqvist
 
 - Det finns flera ramverk för enhetstestning av React-komponenter
 - Vi kommer testa React Testing Library
-  
+
 ---
 
 # Kom igång
@@ -44,10 +42,10 @@ npm test
 - Skriv följande kod i filen:
 
 ```js
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders learn react link", () => {
   render(<App />);
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
@@ -66,12 +64,11 @@ test('renders learn react link', () => {
 # Snapshot, exempel:
 
 ```js
+import React from "react";
+import renderer from "react-test-renderer";
+import App from "./App";
 
-import React from 'react';
-import renderer from 'react-test-renderer';
-import App from './App';
-
-test('renders correctly', () => {
+test("renders correctly", () => {
   const tree = renderer.create(<App />).toJSON();
   expect(tree).toMatchSnapshot();
 });

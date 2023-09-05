@@ -7,8 +7,6 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 ---
 
-![bg left:40% 80%](../../Customization/iths-logo.png)
-
 # Props & Children
 
 Jens Palmqvist
@@ -17,7 +15,7 @@ Jens Palmqvist
 
 # Props
 
-*En React-komponent liknar mycket en vanlig funktion och på samma sätt som en funktion tar emot argument / parametrar kan man skicka data till en React-komponent med hjälp av props*
+_En React-komponent liknar mycket en vanlig funktion och på samma sätt som en funktion tar emot argument / parametrar kan man skicka data till en React-komponent med hjälp av props_
 
 ---
 
@@ -35,18 +33,21 @@ const BildKomponent = (props) => <img src={props.imageUrl} />
 
 # Övning - Title med props
 
-- Bygg om Title-komponenten så att den tar emot en prop som heter *text*
+- Bygg om Title-komponenten så att den tar emot en prop som heter _text_
 - Det som kommer in i text-propen ska sedan skrivas ut i H1:an
 
-*Implementation*
+_Implementation_
+
 ```tsx
 <Title text="Kaffeappen V2">
 ```
 
-*Resulterad HTML*
+_Resulterad HTML_
+
 ```tsx
 <h1>Kaffeappen V2</h1>
 ```
+
 ---
 
 # Olika typer av props
@@ -66,8 +67,8 @@ const BildKomponent = (props) => <img src={props.imageUrl} />
 const KomponentMedOlikaProps = (props) => {
   console.log(props.enText, props.ettNummer, props.enLista, props.ettObjekt);
   props.enFunktion(); //Funktionen kan man anropa
-  return (<p>Jag har många props men visar inte upp nån av dem</p>)
-}
+  return <p>Jag har många props men visar inte upp nån av dem</p>;
+};
 ```
 
 ```jsx
@@ -76,7 +77,8 @@ const KomponentMedOlikaProps = (props) => {
   ettNummer={3}
   enLista={[1, 3, 4]}
   ettObjekt={{ foo: "bar" }} //Obs! Dubbla hakparanteser
-  enFunktion={() => console.log("Jag skickades in i den här komponenten!")} />
+  enFunktion={() => console.log("Jag skickades in i den här komponenten!")}
+/>
 ```
 
 ---
@@ -88,10 +90,13 @@ const BildText = () => {
   const animalType = "fågel";
   const speed = 20; //kilometer i timmen;
 
-  return (<p>Bilden visar en {animalType}.
-    Den kan flyga i {speed} km/h vilket
-    motsvarar {speed / 3.6} m/s.</p>);
-}
+  return (
+    <p>
+      Bilden visar en {animalType}. Den kan flyga i {speed} km/h vilket
+      motsvarar {speed / 3.6} m/s.
+    </p>
+  );
+};
 ```
 
 - Utgå ifrån koden ovan och bryt ut props så att komponenten kan användas enligt nedan
@@ -115,17 +120,23 @@ const BildText = () => {
 const KomponentMedOlikaProps = (props) => {
   console.log(props.enText, props.ettNummer, props.enLista, props.ettObjekt);
   props.enFunktion(); //Funktionen kan man anropa
-  return (<p>Jag har många props men visar inte upp nån av dem</p>)
-}
+  return <p>Jag har många props men visar inte upp nån av dem</p>;
+};
 ```
 
 ```jsx
 //Med destructing
-const KomponentMedOlikaProps = ({ enText, ettNummer, enLista, ettObjekt, enFunktion}) => {
+const KomponentMedOlikaProps = ({
+  enText,
+  ettNummer,
+  enLista,
+  ettObjekt,
+  enFunktion,
+}) => {
   console.log(enText, ettNummer, enLista, ettObjekt);
   enFunktion(); //Funktionen kan man anropa
-  return (<p>Jag har många props men visar inte upp nån av dem</p>)
-}
+  return <p>Jag har många props men visar inte upp nån av dem</p>;
+};
 ```
 
 ---
@@ -134,23 +145,26 @@ const KomponentMedOlikaProps = ({ enText, ettNummer, enLista, ettObjekt, enFunkt
 
 - Utgå ifrån BildText-komponenten från förra övningan
 - Destrukta props-objektet direkt i parameterlistan
-- Uppdatera alla ställen där du använder props.*** i komponenten
+- Uppdatera alla ställen där du använder props.\*\*\* i komponenten
 
 ---
 
 # Children
 
-- Det finns en speciell prop som heter *children*
+- Det finns en speciell prop som heter _children_
 - Den innehåller automatiskt allt som är mellan taggarna när använder en komponent
 
 ```jsx
-const EnKomponentMedChildren = (props) => <p>{props.children}</p>
+const EnKomponentMedChildren = (props) => <p>{props.children}</p>;
 ```
 
 ```html
-<EnKomponentMedChildren>Allt som står här kommer hamna i
-   props.children i komponentens kod</EnKomponentMedChildren>
+<EnKomponentMedChildren
+  >Allt som står här kommer hamna i props.children i komponentens
+  kod</EnKomponentMedChildren
+>
 ```
+
 ---
 
 # Childen, forts.
@@ -159,10 +173,8 @@ const EnKomponentMedChildren = (props) => <p>{props.children}</p>
 
 ```jsx
 const MinSuperLista = ({ children }) => (
-  <ul className="superStyling">
-    { children }
-  </ul>
-)
+  <ul className="superStyling">{children}</ul>
+);
 ```
 
 ```html
@@ -179,12 +191,14 @@ const MinSuperLista = ({ children }) => (
 
 - Gör om Title-komponenten så att texten kommer in som children istället för en prop
 
-*Implementation*
+_Implementation_
+
 ```tsx
 <Title>Kaffeappen V3</Title>
 ```
 
-*Resulterad HTML*
+_Resulterad HTML_
+
 ```tsx
 <h1>Kaffeappen V3</h1>
 ```
